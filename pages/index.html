@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelogue Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#map">Explore Map</a></li>
+                <li><a href="#trip-planner">Trip Planner</a></li>
+                <li><a href="#travel-stories">Travel Stories</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="map">
+        <div id="mapid" style="height: 500px;"></div>
+    </section>
+    <section id="trip-planner">
+        <h2>Trip Planner</h2>
+        <form id="trip-planner-form">
+            <div class="form-group">
+                <label for="story-lon">Longitude:</label>
+                <input type="text" id="story-lon" name="story-lon" required>
+            </div>
+            <div class="form-group">
+                <label for="story-lat">Latitude:</label>
+                <input type="text" id="story-lat" name="story-lat" required>
+            </div>
+
+            <div class="form-group">
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start-date" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" name="end-date" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="preferences">Preferences:</label>
+                <textarea id="preferences" name="preferences" placeholder="Any specific preferences or notes"></textarea>
+            </div>
+    
+            <button type="submit">Plan My Trip</button>
+        </form>
+    </section>
+
+    <section id="saved-trips">
+        <h2>Planned Trips are Saved Here</h2>
+        <div id="trips-container">
+        </div>
+        <div class="pagination">
+            <button id="prev-page">« Previous</button>
+            <button id="next-page">Next »</button>
+        </div>
+    </section>
+    
+    <section id="travel-stories">
+        <h2>Submit Your Travel Story</h2>
+        <div id="stories-container"> 
+        </div>
+        <form id="story-submission-form">
+            <div class="form-group">
+                <label for="story-title">Story Title:</label>
+                <input type="text" id="story-title" name="story-title" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="story-location">Location:</label>
+                <input type="text" id="story-location" name="story-location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="travel-date">Travel Date:</label>
+                <input type="date" id="travel-date" name="travel-date" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="story">Your Story:</label>
+                <textarea id="story" name="story" rows="5" required></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="story-photo">Upload Photo:</label>
+                <input type="file" id="story-photo" name="story-photo" accept="image/*">
+            </div>
+    
+            <button type="submit">Submit Story</button>
+        </form>
+    
+    </section>
+    
+</main>
+
+<footer>
+    <p>&copy; 2023 Travelogue Explorer</p>
+    <div class="social-media">
+        <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.twitter.com/yourpage" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/yourpage" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.youtube.com/yourchannel" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+</footer>
+
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="../script/script.js"></script>
+</body>
+</html>
